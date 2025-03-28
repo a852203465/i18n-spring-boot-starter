@@ -46,7 +46,7 @@ public class LocaleChangeInterceptor implements AsyncHandlerInterceptor {
 	}
 	
 	private Locale parseLocaleValue(String locale) {
-		return new Locale(locale);
+		return Locale.forLanguageTag(locale);
 	}
 	
 	private String resolveLocal(HttpServletRequest request) {

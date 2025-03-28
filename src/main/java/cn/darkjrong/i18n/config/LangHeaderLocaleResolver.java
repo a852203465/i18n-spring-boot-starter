@@ -55,7 +55,7 @@ public class LangHeaderLocaleResolver implements LocaleContextResolver {
 		if (StrUtil.isBlank(requestLang)) {
 			requestLang = request.getParameter(headerName);
 		}
-		Locale locale = StrUtil.isNotBlank(requestLang) ? new Locale(requestLang) : defaultLocale;
+		Locale locale = StrUtil.isNotBlank(requestLang) ? Locale.forLanguageTag(requestLang) : defaultLocale;
 		return isSupportedLocale(locale) ? locale : defaultLocale;
 	}
 	
